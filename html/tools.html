@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Tools | Green Roots</title>
+    <meta name="description" content="Interactive digital security tools from Green Roots - try a Caesar cipher encoder, learn how encryption works, and explore cybersecurity basics.">
+    
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://drew-codes-things.github.io/CollegeProjectYr1/html/tools.html">
+    <meta property="og:title"       content="Security Tools | Green Roots">
+    <meta property="og:description" content="Interactive digital security tools - Caesar cipher, how encryption works, and cybersecurity basics.">
+    <meta property="og:image"       content="https://drew-codes-things.github.io/CollegeProjectYr1/images/hero.webp">
+    <meta name="twitter:card"  content="summary_large_image">
+    <meta name="twitter:title" content="Security Tools | Green Roots">
+    <meta name="twitter:image" content="https://drew-codes-things.github.io/CollegeProjectYr1/images/hero.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/webp" href="../images/logo.webp">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" aria-label="Green Roots homepage">Green Roots</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto" role="list">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Our team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="apply.html">Apply / Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="tools.html"><i class="fas fa-lock me-1" aria-hidden="true"></i>Tools</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Digital Security Tools</h1>
+            <p>Interactive demonstrations - learn how classic encryption and cybersecurity concepts work.</p>
+        </div>
+    </header>
+    <main id="main-content">
+
+        
+        <section class="section-cream" aria-labelledby="caesar-heading">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+
+                    
+                    <div class="col-lg-7">
+                        <h2 id="caesar-heading" class="section-title">
+                            <i class="fas fa-key me-2" aria-hidden="true"></i>Caesar Cipher
+                        </h2>
+                        <p class="section-subtitle">One of the oldest encryption techniques - shift every letter by a fixed number to encode or decode a message.</p>
+
+                        <div class="card p-4">
+                            
+                            <fieldset class="mb-4">
+                                <legend class="fw-bold mb-2" style="font-size:0.95rem;">Mode</legend>
+                                <div class="btn-group" role="group" aria-label="Cipher mode">
+                                    <input type="radio" class="btn-check" name="cipherMode" id="modeEncode" value="encode" checked>
+                                    <label class="btn btn-outline-success" for="modeEncode">
+                                        <i class="fas fa-lock me-1" aria-hidden="true"></i>Encode
+                                    </label>
+                                    <input type="radio" class="btn-check" name="cipherMode" id="modeDecode" value="decode">
+                                    <label class="btn btn-outline-success" for="modeDecode">
+                                        <i class="fas fa-lock-open me-1" aria-hidden="true"></i>Decode
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            
+                            <div class="mb-4">
+                                <label for="shiftSlider" class="form-label fw-bold">
+                                    Shift amount: <span id="shiftVal" class="text-success fw-bold">3</span>
+                                </label>
+                                <input type="range" class="form-range" id="shiftSlider"
+                                       min="1" max="25" value="3"
+                                       aria-describedby="shiftHelp">
+                                <div id="shiftHelp" class="form-help">A shift of 3 is the classic ROT-3 used by Julius Caesar himself.</div>
+                            </div>
+
+                            
+                            <div class="mb-3">
+                                <label for="cipherInput" class="form-label fw-bold">Your message</label>
+                                <textarea class="form-control" id="cipherInput" rows="4"
+                                          placeholder="Type or paste your message here..."
+                                          aria-describedby="inputHelp"></textarea>
+                                <div id="inputHelp" class="form-help">Numbers, spaces, and punctuation are kept unchanged. Only A-Z letters are shifted.</div>
+                            </div>
+
+                            
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <button class="btn btn-success" id="runCipher">
+                                    <i class="fas fa-play me-1" aria-hidden="true"></i>
+                                    <span id="runLabel">Encode</span>
+                                </button>
+                                <button class="btn btn-outline-success" id="clearCipher">
+                                    <i class="fas fa-times me-1" aria-hidden="true"></i>Clear
+                                </button>
+                                <button class="btn btn-outline-success" id="swapCipher" title="Swap input and output">
+                                    <i class="fas fa-exchange-alt me-1" aria-hidden="true"></i>Swap
+                                </button>
+                            </div>
+
+                            
+                            <div class="mb-0">
+                                <label for="cipherOutput" class="form-label fw-bold">Result</label>
+                                <div class="position-relative">
+                                    <textarea class="form-control" id="cipherOutput" rows="4"
+                                              readonly aria-live="polite"
+                                              placeholder="Your encoded / decoded message will appear here..."></textarea>
+                                    <button class="btn btn-sm btn-outline-success position-absolute"
+                                            id="copyBtn"
+                                            style="bottom:0.5rem;right:0.5rem;"
+                                            aria-label="Copy result to clipboard">
+                                        <i class="fas fa-copy me-1" aria-hidden="true"></i>Copy
+                                    </button>
+                                </div>
+                                <div id="copyConfirm" class="form-help text-success" aria-live="polite" style="min-height:1.2em;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <aside class="col-lg-5" aria-label="How the Caesar cipher works">
+                        <h2 class="section-title">How it works</h2>
+                        <p>The Caesar cipher is a <strong>substitution cipher</strong> - one of the earliest known encryption methods, used by Julius Caesar to send secret military messages around 58 BC.</p>
+                        <p>Each letter in the plaintext is replaced by the letter a fixed number of positions later in the alphabet. With a shift of 3:</p>
+                        <div class="card p-3 mb-3" style="font-family:monospace; font-size:0.9rem; background:#f5f0e8;">
+                            <div>A &rarr; D &nbsp; B &rarr; E &nbsp; C &rarr; F &nbsp; &hellip;</div>
+                            <div>X &rarr; A &nbsp; Y &rarr; B &nbsp; Z &rarr; C</div>
+                        </div>
+                        <p>So <em>"HELLO"</em> becomes <em>"KHOOR"</em> with a shift of 3.</p>
+                        <h3 class="h6 fw-bold mt-4">Why is it insecure today?</h3>
+                        <p>There are only 25 possible shifts, so an attacker can try all of them in seconds - this is called a <strong>brute-force attack</strong>. Modern encryption (like AES-256) uses keys so large that brute-forcing them would take longer than the age of the universe.</p>
+                        <h3 class="h6 fw-bold mt-4">Key terms</h3>
+                        <ul class="values-list">
+                            <li><span class="icon"><i class="fas fa-circle-dot" aria-hidden="true"></i></span><span><strong>Plaintext</strong> - the original readable message</span></li>
+                            <li><span class="icon"><i class="fas fa-circle-dot" aria-hidden="true"></i></span><span><strong>Ciphertext</strong> - the encoded message</span></li>
+                            <li><span class="icon"><i class="fas fa-circle-dot" aria-hidden="true"></i></span><span><strong>Key</strong> - the shift value (the secret both parties share)</span></li>
+                            <li><span class="icon"><i class="fas fa-circle-dot" aria-hidden="true"></i></span><span><strong>Brute force</strong> - trying every possible key until one works</span></li>
+                        </ul>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-dark text-white py-5 text-center">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Green Roots &mdash; BTEC Level 3 - Unit 15 student project</p>
+            <p class="mb-0 text-muted" style="font-size:0.85rem;">All images are royalty free.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/caesar.js"></script>
+</body>
+</html>
