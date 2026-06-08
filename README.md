@@ -13,7 +13,7 @@
 
 ---
 
-Green Roots is a fictional organisation that combines local reforestation with real-world digital training for aspiring developers. The site demonstrates multi-page HTML/CSS structure, accessibility practices, Bootstrap 5 layout, and OpenGraph/Twitter Card metadata. Live at [drew-codes-things.github.io/CollegeProjectYr1](https://drew-codes-things.github.io/CollegeProjectYr1/).
+Green Roots is a fictional organisation that combines local reforestation with real-world digital training for aspiring developers. The site demonstrates multi-page HTML/CSS structure, accessibility practices, Bootstrap 5 layout, and OpenGraph/Twitter Card metadata. Live at [collegeproject.drew-gnr.xyz](https://collegeproject.drew-gnr.xyz/).
 
 ---
 
@@ -46,6 +46,20 @@ The password gate and the volunteer/donation form on `html/tools.html` and `html
 - Skip-to-main-content link and `aria-*` attributes throughout for accessibility
 
 ---
+
+## Get the Code
+
+Clone with git:
+
+```bash
+git clone https://github.com/drew-codes-things/AssignmentYr1.git
+```
+
+Or with the [GitHub CLI](https://cli.github.com/):
+
+```bash
+gh repo clone drew-codes-things/AssignmentYr1
+```
 
 ## License
 
